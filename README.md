@@ -15,7 +15,7 @@
 	10.-x: 啓動 BBRx
 	11.-o: 自定義端口
 #### 範例
-`bash <(wget -qO- https://raw.githubusercontent.com/laobanbiefangcu/Seedbox/main/Install.sh -u admin -p adminadmin -c 3072 -q 4.3.9 -l v1.2.20 -v -x`
+`bash <(wget -qO- https://raw.githubusercontent.com/laobanbiefangcu/Seedbox/main/Install.sh) -u admin -p adminadmin -c 3072 -q 4.3.9 -l v1.2.20 -v -x`
 
 ##### 解釋
 	1. 用戶名稱 是 admin
