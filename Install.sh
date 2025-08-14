@@ -267,11 +267,16 @@ if [[ ! -z "$qb_install" ]]; then
 	fi
 	## Create user if it does not exist
 	if ! id -u $username > /dev/null 2>&1; then
-		useradd -m -s /bin/bash --badname $username
+		# Check if user already exists first
+		if getent group $username >/dev/null 2>&1; then
+			useradd -m -s /bin/bash -g $username $username
+		else
+			useradd -m -s /bin/bash $username
+		fi
 		# Check if the user is created successfully
 		if [ $? -ne 0 ]; then
 			warn "Failed to create user $username"
-			return 1
+			exit 1
 		fi
 	fi
 	chown -R $username:$username /home/$username
