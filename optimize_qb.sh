@@ -26,9 +26,9 @@ free -h
 # 应用优化配置
 echo "3. 应用内存优化配置..."
 
-# 磁盘缓存优化 (512MB - 平衡性能和内存)
-sed -i 's/Downloads\\DiskWriteCacheSize=.*/Downloads\\DiskWriteCacheSize=512/' "$CONFIG_FILE"
-echo "   - 磁盘缓存设置为 512MB"
+# 磁盘缓存优化 (1024MB - 平衡性能和内存)
+sed -i 's/Downloads\\DiskWriteCacheSize=.*/Downloads\\DiskWriteCacheSize=1024/' "$CONFIG_FILE"
+echo "   - 磁盘缓存设置为 1024MB"
 
 # 发送缓冲区优化
 sed -i 's/Session\\SendBufferLowWatermark=.*/Session\\SendBufferLowWatermark=512/' "$CONFIG_FILE"
